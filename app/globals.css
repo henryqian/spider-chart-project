@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.spider-chart-container {
+  width: 900px; /* 设置容器宽度为 600 像素 */
+  height: 900px; /* 设置容器高度为 600 像素 */
+  margin: 0 auto; /* 水平居中 */
+}

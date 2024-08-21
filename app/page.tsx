@@ -18,8 +18,8 @@ export default function Home() {
   }, [x1, x2, x3, x4])
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm">
+    <main className="flex flex-col items-center justify-between p-24">
+      <div className="z-10 items-center justify-between font-mono text-sm">
         <h1 className="text-4xl font-bold mb-8">KMS Performance Spider Diagram</h1>
         <div className="text-2xl mb-8 grid grid-cols-2 gap-4">
           <label>
@@ -77,7 +77,9 @@ export default function Home() {
         <div className="text-2xl mb-8">
           <p>System Bandwidth (X5): {x5.toFixed(2)} kbps       SMS Response Time (X6): {x6.toFixed(2)} ms</p>
         </div>
-        <SpiderChart x1={x1} x2={x2} x3={x3} x4={x4} x5={x5} x6={x6} />
+        <div className="spider-chart-container">
+          <SpiderChart x1={x1} x2={x2} x3={x3} x4={x4} x5={x5} x6={x6} />
+        </div>
       </div>
     </main>
   )
