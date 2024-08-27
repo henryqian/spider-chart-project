@@ -3,18 +3,29 @@
 
 import { useState, useEffect } from 'react'
 import SpiderChart from '../components/SpiderChart'
+import { predictX5X6 } from '../utils/lookupTable'
 
 export default function Home() {
   const [x1, setX1] = useState(2)    //iks
   const [x2, setX2] = useState(5)    //user
   const [x3, setX3] = useState(10)   //prod per user
-  const [x4, setX4] = useState(1000) //sms per cmd
+  const [x4, setX4] = useState(1000) //sms per sec
   const [x5, setX5] = useState(0)    //bandwidth
   const [x6, setX6] = useState(0)    //response time
 
+  /*  
   useEffect(() => {
       setX5(x2/5 + x3/10 + x4/1000)
       setX6((x2/5 + x3/10 + x4/1000)/x1)
+  }, [x1, x2, x3, x4])
+  */
+  const [error, setError] = useState(0)
+
+  useEffect(() => {
+    const { x5: predictedX5, x6: predictedX6, error: predictedError } = predictX5X6(x1, x2, x3, x4);
+    setX5(predictedX5);
+    setX6(predictedX6);
+    setError(predictedError);
   }, [x1, x2, x3, x4])
 
   return (
@@ -75,7 +86,9 @@ export default function Home() {
           </label>
         </div>
         <div className="text-2xl mb-8">
-          <p>System Bandwidth (X5): {x5.toFixed(2)} kbps       SMS Response Time (X6): {x6.toFixed(2)} ms</p>
+          <p>Bandwidth (X5): {x5.toFixed(2)} kbps</p>
+          <p>SMS Response (X6): {x6.toFixed(2)} ms</p>
+          <p>Accuracy: {error.toFixed(2)}%</p>
         </div>
         <div className="spider-chart-container">
           <SpiderChart x1={x1} x2={x2} x3={x3} x4={x4} x5={x5} x6={x6} />
