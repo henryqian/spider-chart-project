@@ -8,13 +8,16 @@ const [x3, setX3] = useState(10)   //prod per user
 const [x4, setX4] = useState(1000) //sms per sec
 const [x5, setX5] = useState(0)    //bandwidth
 const [x6, setX6] = useState(0)    //response time
+
+setX5(x2/5 + x3/10 + x4/1000)
+setX6((x2/5 + x3/10 + x4/1000)/x1)
 */
 // 实际使用时，您需要用真实的测试数据替换这个表
 export const lookupTable = [
-    { x1: 1, x2: 5, x3: 10, x4: 1000, x5: 50000, x6: 50000 },
-    { x1: 2, x2: 10, x3: 20, x4: 2000, x5: 400000, x6: 200000 },
-    { x1: 3, x2: 15, x3: 30, x4: 3000, x5: 1350000, x6: 450000 },
-    { x1: 4, x2: 20, x3: 40, x4: 4000, x5: 3200000, x6: 800000 },
+    { x1: 1, x2: 5, x3: 10, x4: 1000, x5: 1+1+1, x6: 3 },
+    { x1: 2, x2: 10, x3: 20, x4: 2000, x5: 2+2+2, x6: 3 },
+    { x1: 3, x2: 15, x3: 30, x4: 3000, x5: 3+3+3, x6: 3 },
+    { x1: 4, x2: 20, x3: 40, x4: 4000, x5: 4+4+4, x6: 3 },
   ];
   
   interface LookupEntry {
