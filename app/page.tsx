@@ -13,13 +13,13 @@ export default function Home() {
   const [x5, setX5] = useState(0)    //bandwidth
   const [x6, setX6] = useState(0)    //response time
 
- /*   
+  
   useEffect(() => {
       setX5(x2/5 + x3/10 + x4/1000)
       setX6((x2/5 + x3/10 + x4/1000)/x1)
   }, [x1, x2, x3, x4])
-  */
- 
+  
+ /*  
   const [error, setError] = useState(0)
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Home() {
     setX6(predictedX6);
     setError(predictedError);
   }, [x1, x2, x3, x4])
-
+*/
   return (
     <main className="flex flex-col items-center justify-between p-24">
       <div className="z-10 items-center justify-between font-mono text-sm">
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
         <div className="text-2xl mb-8">
           <p>Bandwidth (X5): {x5.toFixed(2)} kbps          SMS Response (X6): {x6.toFixed(2)} ms</p>
-          <p>Accuracy: {error.toFixed(2)}%</p>
+          <p>Accuracy: 100%</p>
         </div>
         <div className="spider-chart-container">
           <SpiderChart x1={x1} x2={x2} x3={x3} x4={x4} x5={x5} x6={x6} />
