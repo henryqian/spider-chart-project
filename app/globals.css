@@ -29,5 +29,8 @@ body {
 .spider-chart-container {
   width: 900px; /* 设置容器宽度为 600 像素 */
   height: 900px; /* 设置容器高度为 600 像素 */
-  margin: 0 auto; /* 水平居中 */
+  margin: 0px auto 0 auto; /* margin-top 为20px，水平居中 */
+  color: #f50808;
+  font-weight: 200;
+  border-color: black;
 }
