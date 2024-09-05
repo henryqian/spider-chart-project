@@ -29,7 +29,7 @@ export default function Home() {
         }
         const data = await response.json();
         console.log('Received response:', data);
-        setPageViews(data.count);
+        setPageViews(data.count/2); //this is a work around before can find way to only render once
       } catch (error) {
         console.error('Error increase page views:', error);
       }
@@ -49,7 +49,7 @@ export default function Home() {
         }
         const data = await response.json();
         console.log('Received response:', data);
-        setPageViews(data.count);
+        setPageViews(data.count/2); //this is a work around before can find way to only render once
       } catch (error) {
         console.error('Error fetching page views:', error);
       }
