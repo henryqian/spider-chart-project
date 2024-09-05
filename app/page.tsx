@@ -80,7 +80,7 @@ export default function Home() {
       <div className="z-10 items-top justify-between font-mono text-sm">
         <h1 className="text-4xl font-bold mb-8">KMS Performance Spider Diagram</h1>
         <h1 className="text-2xl mb-8">页面访问次数: {pageViews}</h1>
-        <div className="text-2xl font-bold mb-8 grid grid-cols-2 gap-4">
+        <div className="text-2xl font-bold mb-8 grid grid-cols-2 gap-1">
           <label>
             Amount of IKS (X1):
             <input
